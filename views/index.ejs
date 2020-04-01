@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVID-19 Small Business Loan Calculator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#calculator').click(function(e){
+                const rate = .05;
+                const period = 24;
+                var amount = $('#amount').val();
+                var busType = $('#type').val()
+                var repay = rate*amount/1-(1 + rate);
+                console.log(repay)
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>COVID-19 Small Business Loan Calulator</h1>
+        </div>
+        <div class="section">
+            <h3>Loan Qualifications</h3>
+            <p>Small businesses and eligible nonprofit organizations, Veterans organizations, and Tribal businesses described in the Small Business Act, as well as individuals who are self-employed or are independent contractors, are eligible if they also meet program size standards.</p>
+            <p>Under this program:</p>    
+                <ul> 
+                    <li>Eligible recipients may qualify for a loan up to $10 million determined by 8 weeks of prior average payroll plus an additional 25% of that amount.</li>
+                    <li>Loan payments will be deferred for six months.</li>
+                    <li>This loan has a maturity of 2 years and an interest rate of .5%.</li>
+                    <li>If you maintain your workforce, SBA will forgive the portion of the loan proceeds that are used to cover the first 8 weeks of payroll and certain other expenses following loan origination.</li>
+                </ul>
+
+                 <form action="" id="calculator" method="GET">
+                <div class="form-group">
+                    <label for="Amount">Loan Amount: </label>
+                    <input type="text" class="form-control" id="amount">
+                </div>
+                <div class="form-group">
+                    <label for="Business Type">Business Type: </label>
+                    <select name="Business Type" id="type" class="form-control">  
+                        <option name="sole proprietor">Sole Proprietor</option>
+                        <option name="independent contractor">Independent Contractor</option>
+                        <option name="private non-profit organizations">Private Non Profit</option>
+                        <option name="501(c)(19)/Veterans organization">501(c)(19) / Veterans organization</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-primary">Calculate</button>
+                </div>
+            </form>
+
+        </div>
+        <div class="section">
+            <h3>Monthly Payments</h3>
+            <table>
+
+            </table>
+        </div>
+    </div>
+</body>
+</html>
