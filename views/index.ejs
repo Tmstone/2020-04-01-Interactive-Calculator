@@ -9,12 +9,17 @@
     <script type="text/javascript">
         $(document).ready(function() {
             $('#calculator').click(function(e){
+                //set values for calculator
                 const rate = .05;
                 const period = 24;
+                //get values and calulate rates
                 var amount = $('#amount').val();
                 var busType = $('#type').val()
-                var repay = rate*amount/1-(1 + rate);
-                console.log(repay)
+                var repay = Math.floor(rate*amount/1-(1 + rate)**period);
+                //console.log(Math.round(repay));
+
+                //
+                $('#payback').html(repay);
             });
 
         });
@@ -58,6 +63,8 @@
         </div>
         <div class="section">
             <h3>Monthly Payments</h3>
+            <p>The Loan repayment Amount is $<span id="payback"></span> over 2 years.</p>
+            
             <table>
 
             </table>
